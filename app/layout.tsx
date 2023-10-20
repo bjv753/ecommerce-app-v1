@@ -12,6 +12,9 @@ import { SiteHeader } from "@/components/site-header"
 export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
+    icons: {
+      icon: '/favicon.ico'
+    }
 }
 
 interface RootLayoutProps {
@@ -29,9 +32,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
             fontSans.variable
           )}
         >
+          <Providers>
           <div className="relative flex min-h-screen flex-col">
+            <SiteHeader />
+            <SiteBlob />
             <div className="flex-1">{children}</div>
+            <SiteFooter />
           </div>
+          </Providers>
         </body>
       </html>
     </>
