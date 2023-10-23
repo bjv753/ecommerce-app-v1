@@ -12,14 +12,14 @@ export async function POST(request: Request) {
       const session = await stripe.checkout.sessions.create({
             submit_type: "pay",
             mode: "payment",
-            payment_method_types: ['card'],
+            payment_method_types: ["card"],
             line_items: lineItems,
             shipping_address_collection: {
                   allowed_countries: ['US']
             },
             shipping_options: [
                   {
-                        shipping_rate: "shr_1O44EJJqJfwDjG215a0uHPtZ"
+                        shipping_rate: "shr_1O4AU6JqJfwDjG219hOg1vUq"
                   }
             ],
             billing_address_collection: "auto",
